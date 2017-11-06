@@ -78,16 +78,16 @@ var aufgabe3;
         }
         //6 Schleifen und Startkoordinaten für ARRAYS Schneeflocken,Wolken,Skifahrer, Darstellungsbereich
         for (let i = 0; i < 100; i++) {
-            schneeflockenX[i] = 0 + Math.random() * 800; //Startkoordinaten x-Achse
-            schneeflockenY[i] = 0 + Math.random() * 600; //Startkoordinaten y-Achse
+            schneeflockenX[i] = Math.random() * 800; //Startkoordinaten x-Achse
+            schneeflockenY[i] = Math.random() * 600; //Startkoordinaten y-Achse
         }
         for (let i = 0; i < 3; i++) {
-            wolkenX[i] = 0 + Math.random() * 800;
-            wolkenY[i] = 0 + Math.random() * 150 + 40;
+            wolkenX[i] = Math.random() * 800;
+            wolkenY[i] = Math.random() * 150 + 40;
         }
-        for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < 3; i++) {
             skifahrerX[i] = 0;
-            skifahrerY[i] = 250;
+            skifahrerY[i] = 250 + Math.random() * 100;
         }
         image = crc3.getImageData(0, 0, 800, 600); //Bild in der Variable speichern
         animate();
