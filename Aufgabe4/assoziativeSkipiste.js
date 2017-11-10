@@ -119,7 +119,7 @@ var aufgabe4;
         for (let i = 0; i < skifahrer.length; i++) {
             if (skifahrer[i].x > 800) {
                 skifahrer[i].x = 0;
-                skifahrer[i].y = 250;
+                skifahrer[i].y = 250 + Math.random() * 300;
             }
             mann(skifahrer[i]);
         }
