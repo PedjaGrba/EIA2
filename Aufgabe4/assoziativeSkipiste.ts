@@ -13,7 +13,7 @@ namespace aufgabe4 {
     window.addEventListener("load", skipiste);
 
     //Interface Skifahrer
-    interface object {
+    interface Object {
         x: number;
         y: number;
         dx: number;
@@ -28,7 +28,7 @@ namespace aufgabe4 {
     let wolkenX: number[] = [];
     let wolkenY: number[] = [];
 
-    let skifahrer: object[] = [];
+    let skifahrer: Object[] = [];
 
     var image: any;
 
@@ -159,7 +159,7 @@ namespace aufgabe4 {
         for (let i: number = 0; i < skifahrer.length; i++) {
             if (skifahrer[i].x > 800) {
                 skifahrer[i].x = 0;
-                skifahrer[i].y = 250;
+                skifahrer[i].y = 250 + Math. random() * 300;
             }
 
             mann(skifahrer[i]);
@@ -205,7 +205,7 @@ namespace aufgabe4 {
     }
 
     //Funktion für Skifahrer
-    function mann(_skifahrer: object): void {
+    function mann(_skifahrer: Object): void {
         _skifahrer.x += _skifahrer.dx;
         _skifahrer.y += _skifahrer.dy;
         crc2.fillStyle = _skifahrer.color;
