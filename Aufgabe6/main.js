@@ -74,7 +74,7 @@ var aufgabe6;
         //Skifahrer
         for (let i = 0; i < 3; i++) {
             let s = new aufgabe6.Object1(0, 250);
-            allObjects.push(s);
+            allObjects.push(s); //pusht neue Instanz an den Array anhängen,an nächtfreie "Schublade"
         }
         //Schneeflocken
         for (let i = 0; i < 100; i++) {

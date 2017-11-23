@@ -11,7 +11,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 namespace aufgabe6 {
     //1 EventListener hörcht auf load,Seite wird vollständig geladen.Wenn Ereignis eintritt,dann beginnt Funktion 
     window.addEventListener("load", skipiste);
-    export let crc2: CanvasRenderingContext2D;
+    export let crc2: CanvasRenderingContext2D; //export,damit die Variable in andere Datein exportiert wird
 
 
     //2 Variablen der Klassen
@@ -101,7 +101,7 @@ namespace aufgabe6 {
 
         for (let i: number = 0; i < 3; i++) {
             let s: Object1 = new Object1(0, 250);
-            allObjects.push(s);
+            allObjects.push(s);//pusht neue Instanz an den Array anhängen,an nächtfreie "Schublade"
         }
 
         //Schneeflocken
