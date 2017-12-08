@@ -10,8 +10,10 @@ var StudiVZ;
 (function (StudiVZ) {
     var students = [];
     var stop = false;
+    //prompt ruft Fenster zum eingeben auf
     while (!stop) {
         var action = prompt("Datensatz anlegen (n), abfragen(a) oder Programm beenden (s)\nn,a oder s eingeben");
+        //verschiedene Fälle werden definiert
         switch (action) {
             case "n":
             case "N":

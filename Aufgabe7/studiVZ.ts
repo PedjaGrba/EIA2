@@ -18,10 +18,12 @@ namespace StudiVZ {
     }
     var students: StudentData[] = [];
     var stop: boolean = false;
-
+    
+    //prompt ruft Fenster zum eingeben auf
     while (!stop) {
         var action: string = prompt("Datensatz anlegen (n), abfragen(a) oder Programm beenden (s)\nn,a oder s eingeben");
-
+        
+        //verschiedene Fälle werden definiert
         switch (action) {
             case "n":
             case "N":
@@ -40,6 +42,7 @@ namespace StudiVZ {
     }
 
     function saveData(_input: string): string {
+        
         //Student Objekt vom Typ StudentData erstellen
         let stringToSplit: string[] = _input.split(",", 6);   //string wird in 6 Teile gesplitted
         if (parseInt(stringToSplit[0]) == NaN) {
