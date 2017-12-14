@@ -9,31 +9,36 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace aufgabe8 {
     window.addEventListener("load", init);
- 
-//Große Funktion mit umwandeln der Datentypen.String zu Number + if-Abfragen
+
+    //Große Funktion mit umwandeln der Datentypen.String zu Number + if-Abfragen
     function init(): void {
-        let anzahl: string = prompt("Eingabe der gewünschte Anzahl");
-        let anzahlNumb: number = parseInt(anzahl);
-            
+        let anzahl: string = prompt("Eingabe der gewünschte Anzahl"); //Eingabefenster
+        let anzahlNumb: number = parseInt(anzahl); //wandel in Zahl um und speicher es ab
+
         if (anzahlNumb >= 10 && anzahlNumb <= 100) {
             for (let i: number = 0; i < anzahlNumb; i++) {
-                drawRect(Math.random() * 800, Math.random() * 600, "hsl(" + Math.random() * 360 + ", 100%, 50%)", 30, 30 );
-       } 
-    }
- }        
+                drawRect(Math.random() * 800, Math.random() * 600, "hsl(" + Math.random() * 360 + ", 100%, 50%)", 30, 30);
 
- //Funktion für Rechteckzeichnung + Parameter für Rechtecke
-    function drawRect(_x: number, _y: number, _color: string, width: number, height: number): void {    
-            let div: HTMLDivElement = document.createElement("div"); //erstellt HTML-Element div
-            console.log(div);
-    
-            div.style.marginLeft = _x + "px";
-            div.style.marginTop = _y + "px";
-            div.style.width = width + "px";
-            div.style.height = height + "px";
-            div.style.background = _color;
-            
-            document.body.appendChild(div);
-            
-        }   
+
+            }
+        }
+        else {
+            window.alert("Die Zahl muss zwischen 10 und 100 liegen"); //Warnung bei falscher Eingabe und neu laden der Funktion init()
+        }
+    }
+
+    //Funktion für Rechteckzeichnung + Parameter für Rechtecke
+    function drawRect(_x: number, _y: number, _color: string, width: number, height: number): void {
+        let div: HTMLDivElement = document.createElement("div"); //erstellt HTML-Element div
+        console.log(div);
+
+        div.style.marginLeft = _x + "px";
+        div.style.marginTop = _y + "px";
+        div.style.width = width + "px";
+        div.style.height = height + "px";
+        div.style.background = _color;
+
+        document.body.appendChild(div); //hängt es ans DOM ein bzw. lädt in HTML hoch
+
+    }
 }
