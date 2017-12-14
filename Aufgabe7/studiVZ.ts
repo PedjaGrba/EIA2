@@ -19,11 +19,11 @@ namespace StudiVZ {
     var students: StudentData[] = [];
     var stop: boolean = false;
     
-    //prompt ruft Fenster zum eingeben auf
+    //prompt ruft Fenster zum eingeben auf und nimmt nur strings entgegen
     while (!stop) {
         var action: string = prompt("Datensatz anlegen (n), abfragen(a) oder Programm beenden (s)\nn,a oder s eingeben");
         
-        //verschiedene Fälle werden definiert
+        //switch führt Code aus,wenn n/N eingegeben wird,verschiedene Fälle werden definiert
         switch (action) {
             case "n":
             case "N":
@@ -32,7 +32,7 @@ namespace StudiVZ {
                 break;
             case "a":
             case "A":
-                var matrikel: number = parseInt(prompt("Eingabe Matrikelnummer"));
+                var matrikel: number = parseInt(prompt("Eingabe Matrikelnummer")); //parseInt wandelt string zu number um
                 alert(queryData(matrikel));
                 break;
             case "s":
@@ -44,7 +44,7 @@ namespace StudiVZ {
     function saveData(_input: string): string {
         
         //Student Objekt vom Typ StudentData erstellen
-        let stringToSplit: string[] = _input.split(",", 6);   //string wird in 6 Teile gesplitted
+        let stringToSplit: string[] = _input.split(",", 6); //string wird in 6 Teile gesplitted
         if (parseInt(stringToSplit[0]) == NaN) {
             return "'Matrikelnummer' muss eine Zahl sein";
         }
@@ -64,7 +64,7 @@ namespace StudiVZ {
             return "'Kommentar' als Wörter eingeben";
         }
         else {
-            let student: StudentData = {
+            let student: StudentData = {                              //davor überprüft,hier wird gespeichert
                 matrikelnummer: parseInt(stringToSplit[0]),          //parseInt wandelt string in number
                 name: stringToSplit[1],
                 vorname: stringToSplit[2],
@@ -72,12 +72,12 @@ namespace StudiVZ {
                 geschlecht: parseInt(stringToSplit[4]) == 1,
                 kommentar: stringToSplit[5]
             };
-            students.push(student);
+            students.push(student);//array students, hier lege ich let student rein
             console.log(students);
             return "Erfolgreich gespeichert";
         }
     }
-
+    //wird nach Matirklennummer und die dazugehörigen Daten gesucht,dann Ausgabe der Werte 
     function queryData(_matrikel: number): string {
         for (var i: number = 0; i < students.length; i++) {
             if (students[i].matrikelnummer == _matrikel) {
@@ -88,9 +88,9 @@ namespace StudiVZ {
                 
                 let geschlecht: string;
                 if (students[i].geschlecht)
-                    geschlecht = "Geschlecht: weiblich";
+                    geschlecht = "Geschlecht: männer";
                 else
-                    geschlecht = "Geschlecht: männlich";
+                    geschlecht = "Geschlecht: weiblich";
                 
                 let kommentar: string = "Kommentar: " + students[i].kommentar;
 
