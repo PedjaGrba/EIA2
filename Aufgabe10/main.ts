@@ -216,7 +216,7 @@ namespace Aufgabe10 {
         document.getElementById("prufenbutton").appendChild(button);
     }
 
-//5.GROßE FUNKTION WEITERHIN + FUNKTIONEN FÜR CHECKBOXEN KUGELN,KERZEN,BAUMART ZUM AUSLESEN
+//5.NEUE FUNKTIONEN FÜR CHECKBOXEN KUGELN,KERZEN,BAUMART ZUM AUSLESEN
     
     function CheckBoxKugelnAuslesen(checkBoxElement: HTMLInputElement, anzahl: string): void {
         for (let i: number = 0; i < kugeldaten.length; i++) {
